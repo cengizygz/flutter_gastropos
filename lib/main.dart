@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gastropos/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,6 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: homePage(),
+    );
   }
 }
