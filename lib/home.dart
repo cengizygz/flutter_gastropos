@@ -8,34 +8,186 @@ class homePage extends StatefulWidget {
 }
 
 class _homePageState extends State<homePage> {
+  int quantity = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 255, 0, 0),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.location_on),
-            const SizedBox(width: 10),
-            const Text("İş-(Isparta-Merkez", style: TextStyle(fontSize: 18)),
-            const Icon(Icons.arrow_drop_down),
-          ],
-        ),
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pushReplacementNamed(context, 'profile');
-          },
-          child: const Icon(Icons.shopping_cart_sharp),
-        ),
-      ),
+          centerTitle: true,
+          backgroundColor: Color.fromARGB(255, 255, 0, 0),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(Icons.location_on),
+              const SizedBox(
+                width: 10,
+              ),
+              const Text("İş - (Isparta - Merkez)", // Adress Bar
+                  style: TextStyle(fontSize: 18)),
+              const Icon(Icons.arrow_drop_down),
+            ],
+          ),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, 'profile');
+            },
+            child: const Icon(Icons.shopping_cart_sharp),
+          )),
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey[100],
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         child: ListView(
-          children: [],
+          children: [
+            maps(context),
+            //Center(child: logo()),
+            search(context),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(5, 10, 5, 0),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 50,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        category(
+                          "Hamburger",
+                          true,
+                        ),
+                        category("Fit", false),
+                        category("Pizza", false),
+                        category("Çiğköfte", false),
+                        category("Ev Yemeği", false)
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.32,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Stack(
+                          children: [
+                            item(context, "burgerqueen", "BurgerQueen"),
+                            score(7.4),
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            item(context, "burgerx", "BurgerX"),
+                            score(6.8)
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            item(context, "mcducks", "MCDucks"),
+                            score(7.9)
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            item(context, "burgerking", "BurgerKing"),
+                            score(7.9)
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 5),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          "Tüm Restoranlar",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black),
+                        ),
+                        const Text(
+                          "Tümünü Gör",
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.blue),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.32,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Stack(
+                          children: [
+                            item(context, "pizzaCut", "PizzaCut"),
+                            score(8.2)
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            item(context, "sunbucks", "SunBucks"),
+                            score(8.4)
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            item(context, "Freshy", "Freshy"),
+                            score(8.7)
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            item(context, "sutlacinyeri", "Sütlacın Yeri"),
+                            score(9.3)
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            item(context, "burgerqueen", "BurgerQueen"),
+                            score(7.4)
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            item(context, "burgerx", "BurgerX"),
+                            score(6.8)
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            item(context, "mcducks", "MCDucks"),
+                            score(7.9)
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            item(context, "evyemegi", "EvYemegi"),
+                            score(6.5)
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            item(context, "Pidem", "Pidem"),
+                            score(5.1)
+                          ],
+                        ),
+                        Stack(
+                          children: [
+                            item(context, "burgerking", "BurgerKing"),
+                            score(7.2)
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
