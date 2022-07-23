@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gastropos/home.dart';
 
 class urun_detayPage extends StatefulWidget {
   const urun_detayPage({Key? key}) : super(key: key);
@@ -127,6 +128,31 @@ class _urun_detayPageState extends State<urun_detayPage> {
                   Container(
                     height: 55,
                     width: double.infinity,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              builder: (context) => homePage(),
+                            ),
+                          );
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.shopping_cart,
+                              color: Colors.white,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Karta yönlendir",
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
+                            )
+                          ],
+                        )),
                   )
                 ],
               ),
