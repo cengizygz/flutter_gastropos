@@ -76,9 +76,57 @@ class _urun_detayPageState extends State<urun_detayPage> {
                               child: Icon(Icons.remove),
                             ),
                           ),
+                          SizedBox(width: 10),
+                          Text(
+                            '$s',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                s++;
+                              });
+                            },
+                            child: Container(
+                              height: 40,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Icon(
+                                Icons.add,
+                              ),
+                            ),
+                          )
                         ],
+                      ),
+                      Text(
+                        "70TL",
+                        style: TextStyle(color: Colors.white, fontSize: 30),
                       )
                     ],
+                  ),
+                  Text(
+                    "İçindekiler",
+                    style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "adaıdbwq asdjankw dada wjdn osıefjsoeıfhosıe fjnfoeıs oseıfn sofıj",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  Container(
+                    height: 55,
+                    width: double.infinity,
                   )
                 ],
               ),
