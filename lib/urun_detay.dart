@@ -7,12 +7,84 @@ class urun_detayPage extends StatefulWidget {
 }
 
 class _urun_detayPageState extends State<urun_detayPage> {
+  int s = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 255, 0, 0),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.location_on),
+            const SizedBox(width: 10),
+            const Text("İş - (Isparta - Merkez)",
+                style: TextStyle(fontSize: 18)),
+            const Icon(Icons.arrow_drop_down),
+          ],
+        ),
+      ),
+      backgroundColor: Colors.black,
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              child: CircleAvatar(
+                radius: 110,
+                backgroundImage: AssetImage('assets/images/et.jpg'),
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Color(0xff3a3e3e),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10)),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Dana Eti",
+                    style: TextStyle(fontSize: 40, color: Colors.white),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                if (s > 1) s--;
+                              });
+                            },
+                            child: Container(
+                              height: 40,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Icon(Icons.remove),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

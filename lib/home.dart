@@ -29,7 +29,7 @@ class _homePageState extends State<homePage> {
           ),
           leading: GestureDetector(
             onTap: () {
-              Navigator.pushReplacementNamed(context, 'profile');
+              Navigator.pushReplacementNamed(context, 'yiyecek');
             },
             child: const Icon(Icons.shopping_cart_sharp),
           )),
