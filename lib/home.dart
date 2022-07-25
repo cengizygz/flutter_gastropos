@@ -257,7 +257,7 @@ class _homePageState extends State<homePage> {
             ),
           ),
           onTap: () {
-            Navigator.pushReplacementNamed(context, 'tum_urunler');
+            Navigator.pushReplacementNamed(context, 'site');
           },
         ),
       ),

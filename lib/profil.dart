@@ -12,7 +12,9 @@ class ProfilPage extends StatelessWidget {
             Icons.arrow_back,
             color: Colors.white,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, 'home');
+          },
         ),
       ),
       body: Stack(

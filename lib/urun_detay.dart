@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gastropos/home.dart';
+import 'package:flutter_gastropos/profil.dart';
 
 class urun_detayPage extends StatefulWidget {
   const urun_detayPage({Key? key}) : super(key: key);
@@ -132,7 +133,7 @@ class _urun_detayPageState extends State<urun_detayPage> {
                         onPressed: () {
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
-                              builder: (context) => homePage(),
+                              builder: (context) => ProfilPage(),
                             ),
                           );
                         },
